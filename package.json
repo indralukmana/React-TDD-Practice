@@ -4,5 +4,8 @@
   "description": "Experiment project for practicing TDD on React",
   "main": "index.js",
   "author": "Indra Lukmana",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
 }
