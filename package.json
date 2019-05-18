@@ -8,7 +8,8 @@
 	"scripts": {
 		"start": "parcel index.html",
 		"e2e": "cypress open",
-		"unit": "jest test/**/*.spec.js"
+		"unit": "jest test/**/*.spec.js",
+		"lint": "eslint src/**/*.js test/**/*.js cypress/integration/**/*.js "
 	},
 	"devDependencies": {
 		"@babel/core": "^7.4.4",
@@ -17,10 +18,16 @@
 		"@babel/preset-react": "^7.0.0",
 		"add": "^2.0.6",
 		"babel-core": "^7.0.0-0yarn",
+		"babel-eslint": "^10.0.1",
 		"babel-jest": "^24.8.0",
 		"cypress": "^3.3.0",
 		"enzyme": "^3.9.0",
 		"enzyme-adapter-react-16": "^1.13.0",
+		"eslint": "^5.16.0",
+		"eslint-config-codingitwrong": "^0.1.4",
+		"eslint-plugin-cypress": "^2.2.1",
+		"eslint-plugin-jest": "^22.5.1",
+		"eslint-plugin-react": "^7.13.0",
 		"jest": "^24.8.0",
 		"parcel-bundler": "^1.12.3"
 	},
