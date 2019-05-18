@@ -1,11 +1,18 @@
 {
-  "name": "react-tdd-practice",
-  "version": "0.0.1",
-  "description": "Experiment project for practicing TDD on React",
-  "main": "index.js",
-  "author": "Indra Lukmana",
-  "license": "MIT",
-  "devDependencies": {
-    "parcel-bundler": "^1.12.3"
-  }
+	"name": "react-tdd-practice",
+	"version": "0.0.1",
+	"description": "Experiment project for practicing TDD on React",
+	"main": "index.js",
+	"author": "Indra Lukmana",
+	"license": "MIT",
+	"scripts": {
+		"start": "parcel index.html"
+	},
+	"devDependencies": {
+		"parcel-bundler": "^1.12.3"
+	},
+	"dependencies": {
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6"
+	}
 }
