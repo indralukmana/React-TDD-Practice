@@ -1,0 +1,8 @@
+{
+  "name": "react-tdd-practice",
+  "version": "0.0.1",
+  "description": "Experiment project for practicing TDD on React",
+  "main": "index.js",
+  "author": "Indra Lukmana",
+  "license": "MIT"
+}
