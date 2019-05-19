@@ -1,12 +1,12 @@
-import React from 'react'
-import NewRestaurantListPage from './NewRestaurantListPage'
+import React from 'react';
+import NewRestaurantListPage from './NewRestaurantListPage';
 
 export default class App extends React.Component {
-  render () {
+  render() {
     return (
       <div>
         <NewRestaurantListPage />
       </div>
-    )
+    );
   }
 }
