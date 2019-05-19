@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ['standard', 'standard-react'],
+	extends: ['codingitwrong'],
 	parser: 'babel-eslint',
 	plugins: ['jest', 'react', 'cypress'],
 	env: {
