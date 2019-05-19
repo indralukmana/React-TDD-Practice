@@ -6,10 +6,10 @@ describe('Adding a restaurant', () => {
     cy.get('[data-test="addRestaurantButton"]')
       .click();
 
-    cy.get('[data-test="newRestaurant"]')
+    cy.get('[data-test="newRestaurantName"]')
       .type(restaurantName);
 
-    cy.get('[data-test="saveNewRestaurant"]')
+    cy.get('[data-test="saveNewRestaurantButton"]')
       .click();
 
     cy.contains(restaurantName);
