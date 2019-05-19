@@ -6,4 +6,7 @@ module.exports = {
 		browser: true,
 		'jest/globals': true,
 	},
+	rules: {
+		'newline-per-chained-call': ['error', { ignoreChainWithDepth: 1 }],
+	},
 };
