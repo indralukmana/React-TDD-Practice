@@ -8,12 +8,12 @@ describe('NewRestaurantForm', () => {
       const saveHandler = jest.fn();
       const wrapper = mount(<NewRestaurantForm onSave={saveHandler} />);
 
-      wrapper.find('[data-test="newRestaurantName"]')
+      wrapper.find('input[data-test="newRestaurantName"]')
         .simulate('change', {
           target: { value: 'Warung Sate' },
         });
 
-      wrapper.find('[data-test="saveNewRestaurantButton"]')
+      wrapper.find('button[data-test="saveNewRestaurantButton"]')
         .simulate('click');
 
       expect(saveHandler)
