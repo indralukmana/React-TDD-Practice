@@ -12,6 +12,9 @@ describe('Adding a restaurant', () => {
     cy.get('[data-test="addRestaurantButton"]')
       .click();
 
+    cy.get('[data-test="themeToggleButton"]')
+      .click();
+
     cy.get('[data-test="newRestaurantName"]')
       .type(restaurantName);
 
