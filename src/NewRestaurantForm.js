@@ -1,4 +1,5 @@
 import React from 'react';
+import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 
 export default class NewRestaurantForm extends React.Component {
 	state = { inputText: '' };
@@ -18,9 +19,9 @@ export default class NewRestaurantForm extends React.Component {
 	  return (
 	    <div>
 	      <input type="text" onChange={this.handleTextChange} data-test="newRestaurantName" />
-	      <button data-test="saveNewRestaurantButton" onClick={this.handleSave}>
+	      <PrimaryButton data-test="saveNewRestaurantButton" onClick={this.handleSave}>
 					Save
-	      </button>
+	      </PrimaryButton>
 	    </div>
 	  );
 	}
