@@ -1,6 +1,6 @@
 import React from 'react';
-import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
-import { TextField } from 'office-ui-fabric-react/lib/TextField';
+
+import { Button, TextInput, Box } from 'grommet';
 
 export default class NewRestaurantForm extends React.Component {
 	state = { inputText: '' };
@@ -18,17 +18,20 @@ export default class NewRestaurantForm extends React.Component {
 
 	render() {
 	  return (
-	    <div>
-	      <TextField
-	        type="text"
-	        placeholder="Enter the restaurant name"
-	        onChange={this.handleTextChange}
-	        data-test="newRestaurantName"
-	      />
-	      <PrimaryButton data-test="saveNewRestaurantButton" onClick={this.handleSave}>
-					Save
-	      </PrimaryButton>
-	    </div>
+	    <Box align="center" pad="medium" gap="small" direction="row-responsive">
+	      <Box>
+	        <TextInput
+	          type="text"
+	          align="center"
+	          placeholder="Warung Name"
+	          onChange={this.handleTextChange}
+	          data-test="newRestaurantName"
+	        />
+	      </Box>
+	      <Box>
+	        <Button label="Save" data-test="saveNewRestaurantButton" onClick={this.handleSave} />
+	      </Box>
+	    </Box>
 	  );
 	}
 }
