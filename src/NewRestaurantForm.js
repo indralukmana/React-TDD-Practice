@@ -1,5 +1,6 @@
 import React from 'react';
 import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
+import { TextField } from 'office-ui-fabric-react/lib/TextField';
 
 export default class NewRestaurantForm extends React.Component {
 	state = { inputText: '' };
@@ -18,7 +19,12 @@ export default class NewRestaurantForm extends React.Component {
 	render() {
 	  return (
 	    <div>
-	      <input type="text" onChange={this.handleTextChange} data-test="newRestaurantName" />
+	      <TextField
+	        type="text"
+	        placeholder="Enter the restaurant name"
+	        onChange={this.handleTextChange}
+	        data-test="newRestaurantName"
+	      />
 	      <PrimaryButton data-test="saveNewRestaurantButton" onClick={this.handleSave}>
 					Save
 	      </PrimaryButton>
