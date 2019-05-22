@@ -3,17 +3,24 @@ import React from 'react';
 import { Button, TextInput, Box } from 'grommet';
 
 export default class NewRestaurantForm extends React.Component {
-	state = { inputText: '' };
+	state = {
+	  name: '',
+	  phone: '',
+	};
 
-	handleTextChange = event => {
-	  this.setState({ inputText: event.target.value });
+	handleNameChange = event => {
+	  this.setState({ name: event.target.value });
+	};
+
+	handlePhoneChange = event => {
+	  this.setState({ phone: event.target.value });
 	};
 
 	handleSave = event => {
-	  const { inputText } = this.state;
+	  const { name, phone } = this.state;
 	  const { onSave } = this.props;
 
-	  onSave(inputText);
+	  onSave({ name, phone });
 	};
 
 	render() {
@@ -24,8 +31,15 @@ export default class NewRestaurantForm extends React.Component {
 	          type="text"
 	          align="center"
 	          placeholder="Warung Name"
-	          onChange={this.handleTextChange}
+	          onChange={this.handleNameChange}
 	          data-test="newRestaurantName"
+	        />
+	        <TextInput
+	          type="text"
+	          align="center"
+	          placeholder="Warung Phone"
+	          onChange={this.handlePhoneChange}
+	          data-test="newRestaurantPhone"
 	        />
 	      </Box>
 	      <Box>

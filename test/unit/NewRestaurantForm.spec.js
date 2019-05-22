@@ -13,11 +13,16 @@ describe('NewRestaurantForm', () => {
           target: { value: 'Warung Sate' },
         });
 
+      wrapper.find('input[data-test="newRestaurantPhone"]')
+        .simulate('change', {
+          target: { value: '081299999999' },
+        });
+
       wrapper.find('button[data-test="saveNewRestaurantButton"]')
         .simulate('click');
 
       expect(saveHandler)
-        .toHaveBeenCalledWith('Warung Sate');
+        .toHaveBeenCalledWith({ name: 'Warung Sate', phone: '081299999999' });
     });
   });
 });
