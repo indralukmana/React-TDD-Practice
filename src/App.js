@@ -16,7 +16,7 @@ export default class App extends React.Component {
 	render() {
 	  return (
 	    <Grommet style={{ height: '100vh' }} theme={this.state.theme ? grommet : dark}>
-	      <Box align="center">
+	      <Box align="center" pad="medium" gap="medium" fill="true">
 	        <Button plain icon={<Info />} onClick={this.toggleTheme} data-test="themeToggleButton" />
 	        <NewRestaurantListPage />
 	      </Box>

@@ -4,4 +4,4 @@ import App from './App';
 
 const root = document.getElementById('root');
 
-ReactDOM.render(<App style={{ height: '100vh' }} />, root);
+ReactDOM.render(<App style={{ height: '100%' }} />, root);
