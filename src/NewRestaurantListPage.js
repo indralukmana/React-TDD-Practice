@@ -7,19 +7,12 @@ import { Grommet, Button, Box, Layer } from 'grommet';
 export default class NewRestaurantListPage extends React.Component {
 	state = {
 	  restaurants: [],
-	  showRestaurantForm: false,
 	};
 
 	handleAddRestaurant = restaurantName => {
 	  this.setState({
 	    open: undefined,
 	    restaurants: [...this.state.restaurants, restaurantName],
-	  });
-	};
-
-	handleShowRestaurantForm = () => {
-	  this.setState({
-	    showRestaurantForm: true,
 	  });
 	};
 
