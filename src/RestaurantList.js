@@ -7,12 +7,18 @@ const RestaurantList = ({ restaurants }) => (
       <TableCell>
         <Text weight="bold">Warung</Text>
       </TableCell>
+      <TableCell>
+        <Text weight="bold">No. Telepon</Text>
+      </TableCell>
     </TableHeader>
     <TableBody>
-      {restaurants.map(restaurantName => (
-        <TableRow key={restaurantName}>
+      {restaurants.map(restaurantObj => (
+        <TableRow key={restaurantObj.name}>
           <TableCell>
-            <Text>{restaurantName}</Text>
+            <Text>{restaurantObj.name}</Text>
+          </TableCell>
+          <TableCell>
+            <Text>{restaurantObj.phone}</Text>
           </TableCell>
         </TableRow>
       ))}

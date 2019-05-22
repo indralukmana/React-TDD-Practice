@@ -9,10 +9,10 @@ export default class NewRestaurantListPage extends React.Component {
 	  restaurants: [],
 	};
 
-	handleAddRestaurant = restaurantName => {
+	handleAddRestaurant = restaurantObj => {
 	  this.setState({
 	    open: undefined,
-	    restaurants: [...this.state.restaurants, restaurantName],
+	    restaurants: [...this.state.restaurants, restaurantObj],
 	  });
 	};
 
@@ -26,12 +26,10 @@ export default class NewRestaurantListPage extends React.Component {
 	      align="center"
 	      background={{ color: 'light-2', opacity: 'strong' }}
 	      pad="large"
-	      gap="xlarge"
+	      gap="large"
 	      round
 	      justify="center">
 	      <Button primary label="Add Warung" data-test="addRestaurantButton" onClick={this.onOpen} />
-
-	      {/* {this.state.showRestaurantForm ?  : null} */}
 
 	      {this.state.open && (
 	        <Layer position="center" modal onClickOutside={this.onClose} onClose={this.onClose}>
@@ -39,7 +37,7 @@ export default class NewRestaurantListPage extends React.Component {
 	        </Layer>
 	      )}
 
-	      <Box align="center" justify="center" gap="small" width="medium">
+	      <Box align="center" justify="center" width="medium">
 	        <RestaurantList restaurants={this.state.restaurants} />
 	      </Box>
 	    </Box>

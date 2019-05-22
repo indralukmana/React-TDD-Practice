@@ -25,8 +25,8 @@ export default class NewRestaurantForm extends React.Component {
 
 	render() {
 	  return (
-	    <Box align="center" pad="medium" gap="small" direction="row-responsive">
-	      <Box>
+	    <Box align="center" pad="medium" gap="large" direction="column">
+	      <Box align="center" pad="medium" gap="medium">
 	        <TextInput
 	          type="text"
 	          align="center"

@@ -1,6 +1,7 @@
 describe('Adding a restaurant', () => {
   it('displays the restaurant in the list', () => {
     const restaurantName = 'warung sate';
+    const restaurantPhone = '081299999999';
     cy.visit('http://localhost:1234');
 
     cy.get('[data-test="newRestaurantName"]')
@@ -15,6 +16,9 @@ describe('Adding a restaurant', () => {
     cy.get('[data-test="newRestaurantName"]')
       .type(restaurantName);
 
+    cy.get('[data-test="newRestaurantPhone"]')
+      .type(restaurantPhone);
+
     cy.get('[data-test="saveNewRestaurantButton"]')
       .click();
 
@@ -28,5 +32,6 @@ describe('Adding a restaurant', () => {
       .should('not.exist');
 
     cy.contains(restaurantName);
+    cy.contains(restaurantPhone);
   });
 });
