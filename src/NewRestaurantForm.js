@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Button, TextInput, Box } from 'grommet';
+import { Button, TextInput, Box, FormField, Form } from 'grommet';
+import { Formik } from 'formik';
 
 export default class NewRestaurantForm extends React.Component {
 	state = {
@@ -26,25 +27,31 @@ export default class NewRestaurantForm extends React.Component {
 	render() {
 	  return (
 	    <Box align="center" pad="medium" gap="large" direction="column">
-	      <Box align="center" pad="medium" gap="medium">
-	        <TextInput
-	          type="text"
-	          align="center"
-	          placeholder="Warung Name"
-	          onChange={this.handleNameChange}
-	          data-test="newRestaurantName"
-	        />
-	        <TextInput
-	          type="text"
-	          align="center"
-	          placeholder="Warung Phone"
-	          onChange={this.handlePhoneChange}
-	          data-test="newRestaurantPhone"
-	        />
-	      </Box>
-	      <Box>
-	        <Button label="Save" data-test="saveNewRestaurantButton" onClick={this.handleSave} />
-	      </Box>
+	      <Formik>
+	        {() => (
+	          <Form>
+	            <Box align="center" pad="medium" gap="medium">
+	              <FormField
+	                label="Name"
+	                name="name"
+	                placeholder="Warung Name"
+	                onChange={this.handleNameChange}
+	                data-test="newRestaurantName"
+	              />
+	              <FormField
+	                label="Phone"
+	                name="phone"
+	                placeholder="Warung Phone"
+	                onChange={this.handlePhoneChange}
+	                data-test="newRestaurantPhone"
+	              />
+	            </Box>
+	            <Box>
+	              <Button label="Save" data-test="saveNewRestaurantButton" onClick={this.handleSave} />
+	            </Box>
+	          </Form>
+	        )}
+	      </Formik>
 	    </Box>
 	  );
 	}
