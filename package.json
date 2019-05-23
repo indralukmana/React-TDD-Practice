@@ -39,6 +39,7 @@
 		"parcel-bundler": "^1.12.3"
 	},
 	"dependencies": {
+		"formik": "^1.5.7",
 		"grommet": "^2.7.0",
 		"grommet-icons": "^4.2.0",
 		"office-ui-fabric-react": "^6.182.1",
