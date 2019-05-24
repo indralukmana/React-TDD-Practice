@@ -7,6 +7,7 @@ export default class NewRestaurantForm extends React.Component {
 	state = {
 	  name: '',
 	  phone: '',
+	  submitted: false,
 	};
 
 	handleNameChange = event => {
@@ -17,37 +18,64 @@ export default class NewRestaurantForm extends React.Component {
 	  this.setState({ phone: event.target.value });
 	};
 
-	handleSave = event => {
-	  const { name, phone } = this.state;
+	handleSave = values => {
+	  const { name, phone } = values;
 	  const { onSave } = this.props;
 
 	  onSave({ name, phone });
 	};
 
 	render() {
+	  const { submitted } = this.state;
 	  return (
 	    <Box align="center" pad="medium" gap="large" direction="column">
-	      <Formik>
-	        {() => (
-	          <Form>
+	      <Formik
+	        validate={values => {
+	          const errors = {};
+	          if (!values.name) {
+	            errors.name = 'required';
+	          }
+	          if (!values.phone) {
+	            errors.phone = 'required';
+	          } else if (!values.phone.match(/^[0-9]+$/)) {
+	            errors.phone = 'numeric only';
+	          }
+	          return errors;
+	        }}
+	        validateOnBlur={submitted}
+	        validateOnChange={submitted}
+	        onSubmit={this.handleSave} //This will set the onSave from parent component
+	      >
+	        {({ values, errors, handleChange, handleSubmit }) => (
+	          <Form
+	            onSubmit={event => {
+	              event.preventDefault();
+	              this.setState({ submitted: true });
+	              handleSubmit();
+	            }}>
 	            <Box align="center" pad="medium" gap="medium">
-	              <FormField
-	                label="Name"
-	                name="name"
-	                placeholder="Warung Name"
-	                onChange={this.handleNameChange}
-	                data-test="newRestaurantName"
-	              />
-	              <FormField
-	                label="Phone"
-	                name="phone"
-	                placeholder="Warung Phone"
-	                onChange={this.handlePhoneChange}
-	                data-test="newRestaurantPhone"
-	              />
+	              <FormField label="Name" error={errors.name}>
+	                <TextInput
+	                  id="name"
+	                  name="name"
+	                  value={values.name || ''}
+	                  onChange={handleChange}
+	                  data-test="newRestaurantName"
+	                />
+	              </FormField>
+
+	              <FormField label="Phone" error={errors.phone}>
+	                <TextInput
+	                  name="phone"
+	                  placeholder="Warung Phone"
+	                  onChange={handleChange}
+	                  value={values.phone || ''}
+	                  data-test="newRestaurantPhone"
+	                />
+	              </FormField>
 	            </Box>
 	            <Box>
-	              <Button label="Save" data-test="saveNewRestaurantButton" onClick={this.handleSave} />
+	              <Button label="Save" type="submit" data-test="saveNewRestaurantButton" />
 	            </Box>
 	          </Form>
 	        )}
